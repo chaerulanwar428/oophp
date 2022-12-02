@@ -7,7 +7,9 @@ class Produk{
             $penerbit = "penerbit",
             $harga = 0;
 
-
+    public function getLabel(){
+        return "$this->penulis, $this->penerbit";
+    }
 }
 
 
