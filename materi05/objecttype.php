@@ -22,6 +22,13 @@ class Produk{
 }
 
 
+class CetakInfoProduk{
+    public function cetak ($produk){
+        $str = "{$produk->judul} |{$produk->getLabel()} (Rp .{$produk->harga})";
+        return $str;
+    }
+}
+
 
 $produk1 = new Produk("Naruto","Masashi Kishimoto", "Shonen Jump", 30000);
 
