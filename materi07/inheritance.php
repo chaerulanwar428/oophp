@@ -26,7 +26,7 @@ class Produk{
         return "$this->penulis, $this->penerbit";
     }
 
-    public function getInfoLengkap(){
+    public function getInfoProduk(){
         //komik: Naruto | mashasi kishimoto, shonen jump (Rp. 30000) - 100 Halaman.
         $str = "{$this->tipe} : {$this->judul} | {$this->getLabel()} (Rp.{$this->harga})";
         if ($this-> tipe == "Komik"){
@@ -38,6 +38,14 @@ class Produk{
     }
 }
 
+
+class Komik extends Produk{
+    public function getInfoProduk(){
+        $str = "Komik : {$this->judul} | {$this->getLabel()} (Rp. {$this->harga}) - {$this->jmlHalaman} Halaman.";
+    }
+
+
+}
 
 class CetakInfoProduk{
     public function cetak (Produk $produk){
