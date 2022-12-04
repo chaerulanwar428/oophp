@@ -25,6 +25,17 @@ class Produk{
     public function getLabel(){
         return "$this->penulis, $this->penerbit";
     }
+
+    public function getInfoLengkap(){
+        //komik: Naruto | mashasi kishimoto, shonen jump (Rp. 30000) - 100 Halaman.
+        $str = "{this->tipe} : {$this->judul} | {$this->getLabel()} (Rp.{$this->harga})";
+        if ($this-> tipe == "Komik"){
+            $str .= " - {$his->jmlHalaman} Halaman.";
+        } else if ($this->tipe == "Game"){
+            $str .= "- {$this->waktuMain} Jam."
+        }
+        return $str;
+    }
 }
 
 
