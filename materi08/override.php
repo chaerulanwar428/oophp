@@ -16,8 +16,6 @@ class Produk{
 
     }
     
-
-
     public function getLabel(){
         return "$this->penulis, $this->penerbit";
     }
@@ -76,7 +74,4 @@ $produk2 = new Game("Uncharted", "Neil D", "Sony Computer", 250000,50);
 echo $produk1 -> getInfoProduk();
 echo"<br>";
 echo $produk2 -> getInfoProduk();
-
-
-
 ?>
