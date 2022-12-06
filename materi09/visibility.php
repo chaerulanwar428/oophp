@@ -4,10 +4,13 @@ class Produk{
 
     public $judul,
             $penulis,
-            $penerbit,
-            $harga;
+            $penerbit;
 
 
+
+    private $harga;
+
+    
     public function __construct($judul ="judul", $penulis = "penulis",$penerbit = "penerbit",$harga = 0){
         $this->judul = $judul;
         $this->penulis = $penulis;
@@ -18,7 +21,7 @@ class Produk{
     
     public function getLabel(){
         return "$this->penulis, $this->penerbit";
-    }
+    } 
 
     public function getInfoProduk(){
         //komik: Naruto | mashasi kishimoto, shonen jump (Rp. 30000) - 100 Halaman.
