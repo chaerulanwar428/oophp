@@ -6,7 +6,7 @@ class Produk{
             $penulis,
             $penerbit;
 
-
+    protected $diskon;
 
     private $harga;
 
