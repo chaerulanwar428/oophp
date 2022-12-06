@@ -10,7 +10,7 @@ class Produk{
 
     private $harga;
 
-    
+
     public function __construct($judul ="judul", $penulis = "penulis",$penerbit = "penerbit",$harga = 0){
         $this->judul = $judul;
         $this->penulis = $penulis;
@@ -19,6 +19,12 @@ class Produk{
 
     }
     
+
+    public function getHarga(){
+        return $this->harga;
+    }
+
+
     public function getLabel(){
         return "$this->penulis, $this->penerbit";
     } 
@@ -77,4 +83,8 @@ $produk2 = new Game("Uncharted", "Neil D", "Sony Computer", 250000,50);
 echo $produk1 -> getInfoProduk();
 echo"<br>";
 echo $produk2 -> getInfoProduk();
+echo "<hr>";
+
+echo $produk2->getHarga();
+
 ?>
