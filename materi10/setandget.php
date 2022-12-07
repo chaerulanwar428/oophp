@@ -121,6 +121,10 @@ echo"<br>";
 echo $produk2 -> getInfoProduk();
 echo "<hr>";
 
+$produk2->setDiskon(30);
+echo $produk2->getHarga();
+echo"<hr>";
+
 $produk1->setPenulis("chaerul anwar");
 echo $produk1->getPenulis();
 
