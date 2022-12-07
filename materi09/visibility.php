@@ -2,13 +2,12 @@
 
 class Produk{
 
-    public $judul,
+    private $judul,
             $penulis,
-            $penerbit;
+            $penerbit,
+            $harga;
 
     protected $diskon;
-
-    private $harga;
 
 
     public function __construct($judul ="judul", $penulis = "penulis",$penerbit = "penerbit",$harga = 0){
