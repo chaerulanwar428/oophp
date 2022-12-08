@@ -1,12 +1,12 @@
 <?php
 
 interface infoProduk{
-    abstract function getInfoProduk();
+    public function getInfoProduk();
 }
 
-abstract class Produk{
+Abstract class Produk{
 
-    private $judul,
+     protected $judul,
             $penulis,
             $penerbit,
             $harga,
@@ -68,17 +68,13 @@ abstract class Produk{
     } 
 
 
+    abstract public function getInfo();
     
-    
-    public function getInfo(){
-        //komik: Naruto | mashasi kishimoto, shonen jump (Rp. 30000) - 100 Halaman.
-        $str = "{$this->judul} | {$this->getLabel()} (Rp.{$this->harga})";
-        return $str;
-    }
+  
 }
 
 
-class Komik extends Produk{
+class Komik extends Produk implements infoProduk{
     public $jmlHalaman;
 
     public function __construct($judul ="judul", $penulis = "penulis", $penerbit ="penerbit" , $harga = 0, $jmlHalaman = 0){
@@ -87,7 +83,12 @@ class Komik extends Produk{
         $this->jmlHalaman = $jmlHalaman;
     }
 
-    
+    public function getInfo(){
+        //komik: Naruto | mashasi kishimoto, shonen jump (Rp. 30000) - 100 Halaman.
+        $str = "{$this->judul} | {$this->getLabel()} (Rp.{$this->harga})";
+        return $str;
+    }
+
     public function getInfoProduk(){
         $str = "Komik : " . $this->getInfo() . " - {$this->jmlHalaman} Halaman.";
         return $str;
@@ -95,7 +96,7 @@ class Komik extends Produk{
 }
 
 
-class Game extends Produk{
+class Game extends Produk implements infoProduk{
     public $waktuMain;
 
     public function __construct($judul ="judul", $penulis = "penulis", $penerbit ="penerbit" , $harga = 0, $waktuMain = 0){
@@ -104,6 +105,11 @@ class Game extends Produk{
         $this->waktuMain =$waktuMain;
     }
 
+    public function getInfo(){
+        //komik: Naruto | mashasi kishimoto, shonen jump (Rp. 30000) - 100 Halaman.
+        $str = "{$this->judul} | {$this->getLabel()} (Rp.{$this->harga})";
+        return $str;
+    }
    
 
         public function getInfoProduk(){
