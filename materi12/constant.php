@@ -10,4 +10,25 @@ class Coba{
 }
 
 echo Coba::MAHASISWA;
+
+echo "<br>";
+
+echo __FILE__;
+
+echo "<br>";
+
+function magic(){
+    return __FUNCTION__;
+}
+
+echo magic();
+
+echo "<br>";
+
+// class Const{
+//     public $kelas = __CLASS__;
+// }
+
+// $obj = new Const;
+// echo $obj -> kelas;
 ?>
