@@ -1,5 +1,9 @@
 <?php
 
+interface infoProduk{
+    abstract function getInfoProduk();
+}
+
 abstract class Produk{
 
     private $judul,
@@ -63,7 +67,7 @@ abstract class Produk{
         return "$this->penulis, $this->penerbit";
     } 
 
-    abstract function getInfoProduk();
+
     
     
     public function getInfo(){
