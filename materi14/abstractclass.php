@@ -1,6 +1,6 @@
 <?php
 
-class Produk{
+abstract class Produk{
 
     private $judul,
             $penulis,
@@ -63,7 +63,10 @@ class Produk{
         return "$this->penulis, $this->penerbit";
     } 
 
-    public function getInfoProduk(){
+    abstract function getInfoProduk();
+    
+    
+    public function getInfo(){
         //komik: Naruto | mashasi kishimoto, shonen jump (Rp. 30000) - 100 Halaman.
         $str = "{$this->judul} | {$this->getLabel()} (Rp.{$this->harga})";
         return $str;
@@ -79,8 +82,10 @@ class Komik extends Produk{
 
         $this->jmlHalaman = $jmlHalaman;
     }
+
+    
     public function getInfoProduk(){
-        $str = "Komik : " . parent::getInfoProduk() . " - {$this->jmlHalaman} Halaman.";
+        $str = "Komik : " . $this->getInfo() . " - {$this->jmlHalaman} Halaman.";
         return $str;
     }
 }
@@ -98,7 +103,7 @@ class Game extends Produk{
    
 
         public function getInfoProduk(){
-        $str = "Game : ". parent::getInfoProduk() .  " ~ {$this->waktuMain}  Jam.";
+        $str = "Game : ". $this->getInfo() .  " ~ {$this->waktuMain}  Jam.";
         return $str;
     }
 }
