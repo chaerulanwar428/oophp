@@ -104,8 +104,19 @@ class Game extends Produk{
 }
 
 class CetakInfoProduk{
-    public function cetak (Produk $produk){
-        $str = "{$produk->judul} |{$produk->getLabel()} (Rp .{$produk->harga})";
+    public $daftarProduk = array();
+
+    public function tambahProduk(Produk $produk){
+        $this->daftarProduk[] = $produk;
+    }
+
+    public function cetak (){
+        $str = "DAFTAR PRODUK : <br>";
+
+        foreach ($this->daftarProduk as $p)
+        {
+            $str .= "-{$p->getInfoProduk()}<br>";
+        }
         return $str;
     }
 }
@@ -115,17 +126,10 @@ $produk1 = new Komik("Naruto","Masashi Kishimoto", "Shonen Jump", 30000,100);
 
 $produk2 = new Game("Uncharted", "Neil D", "Sony Computer", 250000,50);
 
+$cetakProduk = new CetakInfoProduk();
+$cetakProduk->tambahProduk($produk1);
+$cetakProduk->tambahProduk($produk2);
+echo $cetakProduk->cetak();
 
-echo $produk1 -> getInfoProduk();
-echo"<br>";
-echo $produk2 -> getInfoProduk();
-echo "<hr>";
-
-$produk2->setDiskon(30);
-echo $produk2->getHarga();
-echo"<hr>";
-
-$produk1->setPenulis("chaerul anwar");
-echo $produk1->getPenulis();
 
 ?>
